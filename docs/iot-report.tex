@@ -1,0 +1,54 @@
+\documentclass[a4paper,12pt]{report}
+
+\usepackage{fontspec} % Set font families
+%\setmainfont{}
+%\setsansfont{}
+\setmonofont{UbuntuMono Nerd Font Mono}
+
+\usepackage{geometry}
+\geometry{margin=1.5cm}
+
+\usepackage{graphicx} % Images
+\usepackage{xcolor} % Colours
+\usepackage{caption}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage[outputdir=build]{minted} % source code blocks
+\definecolor{codebg}{rgb}{0.90, 0.90, 0.90}
+
+\begin{document}
+\begin{titlepage}
+    \newgeometry{margin=2cm}
+    \begin{center}
+        \noindent
+        \makebox[0pt][l]{
+            \begin{tabular}{@{}c@{}}
+                \includegraphics[scale=0.6]{../img/New_NIE_crest.png}
+            \end{tabular}
+        }\hfill
+        \begin{tabular}{@{}c@{}}
+            \textbf{\Large{The National Institute}}\\
+            \textbf{\Large{of}}\\
+            \textbf{\Large{Engineering}}\\
+        \textbf{\Large{Mysuru}}
+        \end{tabular}
+        \hfill
+        \makebox[0pt][r]{
+            \begin{tabular}{@{}c@{}}
+                \includegraphics[scale=0.6]{../img/ecelogo.png}
+            \end{tabular}
+        } \\
+        \vspace{5cm}
+        \huge{Department of Electronics and Communication Engineering} \\
+        \vspace{2cm}
+        Internet of Things Project \\
+        6\textsuperscript{th} Semester \\
+        \vspace{1cm}
+        \textbf{\huge{Posture tracking using gyroscopes}}
+    \end{center}
+\end{titlepage}
+\clearpage
+\restoregeometry
+Hello
+\end{document}
+
