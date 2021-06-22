@@ -2,9 +2,7 @@
 
 Adafruit_MPU6050 mpu;
 bool reading_success;
-sensors_event_t accel_event;
-sensors_event_t gyro_event;
-sensors_event_t temp_event;
+sensors_event_t accel_event, gyro_event, temp_event;
 
 void setup()
 {
