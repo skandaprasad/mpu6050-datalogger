@@ -1,21 +1,24 @@
-from oauth2client.service_account import ServiceAccountCredentials
+#!/usr/bin/env python3
+from google.oauth2 import service_account
 import gspread
 import time
 import os
 import numpy as np
 import streamlit as st
 
-
+SCOPES = [
+        'https://www.googleapis.com/auth/spreadsheets',
+        'https://www.googleapis.com/auth/drive.file',
+        'https://www.googleapis.com/auth/drive'
+        ]
 SERVICE_ACCOUNT_FILE = os.getenv("SERVICE_ACCOUNT_FILE")
 
 class GetData:
     def __init__(self):
-        self.scope =['https://www.googleapis.com/auth/spreadsheets',
-                     'https://www.googleapis.com/auth/drive.file',
-                     'https://www.googleapis.com/auth/drive']
-        self.creds = ServiceAccountCredentials.from_json_keyfile_name(
+        self.scope = SCOPES
+        self.creds = service_account.Credentials.from_service_account_file(
                 SERVICE_ACCOUNT_FILE,
-                self.scope)
+                scopes=self.scope)
         self.client = gspread.authorize(self.creds)
         self.sheet = self.client.open("MPU6050_Log").sheet1
         self.chart = st.line_chart(np.array([[5.0]]))
@@ -57,9 +60,7 @@ class GetData:
         ended = time.localtime(time.time())
         return self.gettime_insecs(started, ended), cursor
 
-
-
-    def start_read(self, startingPoint=2, required_col=7 ):
+    def start_read(self, startingPoint=2, required_col=7):
         cursor = startingPoint
         while True:
             try:
@@ -67,7 +68,7 @@ class GetData:
                 val = float(val)
                 print(val)
                 if val > 15:
-                    gtime, cursor = self.good_posturetime(val=val,cursor=cursor)
+                    gtime, cursor = self.good_posturetime(val=val, cursor=cursor)
                     print(val)
                     st.write("Good Posture time in seconds:", gtime)
                     print(f'goodPosture:{gtime}')
@@ -79,9 +80,6 @@ class GetData:
                 else:
                     cursor += 1
                     self.chart.add_rows(np.array([[float(val)]]))
-
-
-
             except:
                     pass
 
