@@ -6,7 +6,7 @@
 The data is collected via MPU6050 gyroscope/accelerometer modules connected to
 any microcontroller of choice (we have used both the NodeMCU and Arduino UNO
 with success). These represent the edge nodes. We use one of Adafruit's
-standard sensor libraries (\mintinline{c}{Adafruit_MPU6050.h}) to interface
+standard sensor libraries \cite{ada} (\mintinline{c}{Adafruit_MPU6050.h}) to interface
 our edge nodes with the sensor.
 \par
 
@@ -88,7 +88,7 @@ that then updates Google Sheets via the REST API.
 Google provides a RESTful API for Google Sheets via its cloud platform. Out of
 the several REST resources available, we have used
 \mintinline{c}{v4.spreadsheets.values} for updating the sheet. The sheet is
-updated using the \mintinline{c}{batchUpdate} method, which issues
+updated using the \mintinline{c}{batchUpdate} method \cite{gsheetapi}, which issues
 \mintinline{c}{POST} requests, containing the range of cells, along with the
 data to be updated.
 
@@ -110,7 +110,7 @@ data to be updated.
     \texttt{data[]} & The new values to apply to the spreadsheet. \\
     \hline
 \end{tabularx}
-\caption{Used fields from request body}
+\caption{Used fields from request body \cite{gsheetapi}}
 \label{fieldtable}
 \end{table}
 
@@ -142,7 +142,7 @@ data to be updated.
     requests appeared. \\
     \hline
 \end{tabularx}
-\caption{Fields in response body}
+\caption{Fields in response body \cite{gsheetapi}}
 \label{fieldtable}
 \end{table}
 
