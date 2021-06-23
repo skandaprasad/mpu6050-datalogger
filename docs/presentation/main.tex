@@ -6,7 +6,14 @@
 \usepackage{amsfonts, amssymb, amsmath}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage{hyperref}
+\usepackage{hyperref} % link crossrefs and toc
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    filecolor=magenta,
+    urlcolor=cyan,
+    citecolor=black
+}
 \usepackage{pdfpages}
 \usepackage{graphicx} % Allows including images
 \graphicspath{{../../img}}
@@ -197,5 +204,7 @@
 %-----------------------------------------------
 \begin{frame}
          \Huge{\centerline{Questions}}
+	 \vspace{1cm}
+	{\large \centerline{GitHub: \url{https://github.com/skandaprasad/mpu6050-datalogger}}}	
 \end{frame}
 \end{document}
