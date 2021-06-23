@@ -1,0 +1,92 @@
+\documentclass[a4paper,12pt]{report}
+
+\usepackage{fontspec} % Set font families
+%\setmainfont{}
+%\setsansfont{}
+\setmonofont{UbuntuMono Nerd Font Mono}
+
+\usepackage{geometry}
+\geometry{margin=1.5cm}
+
+\usepackage{tocloft} % toc, lof, lot, lol on same page by default
+\usepackage{siunitx} % units
+\usepackage{graphicx} % Images
+\usepackage{xcolor} % Colours
+\usepackage{caption} % caption floats
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage[newfloat,outputdir=build]{minted} % source code blocks
+\usemintedstyle[c]{bw}
+\definecolor{codebg}{rgb}{0.9, 0.9, 0.9}
+
+\usepackage{hyperref} % link crossrefs and toc
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+\usepackage{subfiles}
+
+\newenvironment{code}{\captionsetup{type=listing}}{}
+\SetupFloatingEnvironment{listing}{name=Listing}
+\newcommand\Smallfont{\fontsize{10}{7.2}\selectfont}
+
+\begin{document}
+\begin{titlepage}
+    \newgeometry{margin=2cm}
+    \begin{center}
+        \noindent
+        \makebox[0pt][l]{
+            \begin{tabular}{@{}c@{}}
+                \includegraphics[scale=0.45]{../img/New_NIE_crest.png}
+            \end{tabular}
+        }\hfill
+        \begin{tabular}{@{}c@{}}
+            \textbf{\Large The National Institute of Engineering} \\
+            \textbf{\Large{Mysuru}}
+        \end{tabular}
+        \hfill
+        \makebox[0pt][r]{
+            \begin{tabular}{@{}c@{}}
+                \includegraphics[scale=0.37]{../img/ecelogo.png}
+            \end{tabular}
+        } \\
+        \vspace{5cm}
+        {\huge Department of Electronics and Communication Engineering} \\
+        \vspace{2cm}
+        \large{Internet of Things Project} \\
+        \large{6\textsuperscript{th} Semester} \\
+        \large{2020-21} \\
+        \vspace{1cm}
+        \textbf{\huge Posture Tracking Using Gyroscope} \\
+        \vspace{1cm}
+        \textbf{\underline{\large Submitted to:}} \\
+        \textbf{\large Nandini S P} \\
+        Assistant Professor, Dept. of ECE \\
+        \vspace{1cm}
+        \textbf{\underline{\large Submitted by:}} \\
+        \vspace{0.5cm}
+        \begin{tabular}[H]{l l}
+            C. Ramprakash & 4NI18EC019 \\
+            Pratyusha R & 4NI18EC057 \\
+            Skanda Prasad & 4NI18EC085 \\
+        \end{tabular}
+    \end{center}
+\end{titlepage}
+\clearpage
+\restoregeometry
+
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+
+\listoffigures
+\listoftables
+\listoflistings
+\newpage
+
+\pagenumbering{arabic}
+
+\subfile{implementation.tex}
+\end{document}
