@@ -8,11 +8,10 @@
 \usepackage{subcaption}
 \usepackage{hyperref}
 \usepackage{pdfpages}
-\usepackage[backend=biber, sorting=none]{biblatex}
-\addbibresource{main.bib}
-\AtBeginBibliography{\small}
 \usepackage{graphicx} % Allows including images
+\graphicspath{{../../img}}
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{siunitx}
 \renewcommand{\inserttotalframenumber}{\pageref{lastslide}}
 
 %----------------------------------------------------------------------------------------
@@ -20,8 +19,8 @@
 %----------------------------------------------------------------------------------------
 
 % The title
-\title[short title]{Posture Detection}
-\subtitle{Monitor Posture in Real-time using Gyroscope.}
+\title{Real-time Posture Tracking using Gyroscope}
+\subtitle{Internet of Things Project}
 \vspace{10cm}
 \author[Pin-Yen]{Pratyusha R - C Ramprakash - Skanda Prasad}
 \institute % Your institution may be shorthand to save space
@@ -29,7 +28,7 @@
     % Your institution for the title page
     Department of Electronics and Communication Engineering
 
-    6th Semester, A Section 
+    6th Semester, A Section
     \vskip 3pt
 }
 \date{June 24, 2021} % Date, can be changed to a custom date
@@ -47,7 +46,7 @@
      \centering
      \begin{subfigure}[b]{0.49\textwidth}
          \centering
-         \includegraphics[scale=0.35]{drpt.PNG}
+         \includegraphics[scale=0.35]{ecelogo.png}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.49\textwidth}
@@ -64,81 +63,50 @@
 \end{frame}
 
 %------------------------------------------------
-\section{Introduction.}
+\section{Introduction}
 %------------------------------------------------
 
 \begin{frame}{Introduction}
         \vspace{0.5cm}
         \begin{itemize}
-        \item Bad habits such as slouching cause muscle fatigue and tension that ultimately lead to poor posture.
-        \item Slouching can cause the spinal ligaments to stretch beyond their healthy limit, and poor posture can strain your spinal discs. 
-        \item To correct bad posture it is crucial to monitor posture. 
-        \item \textit{" If you can’t measure it, you can’t improve it."} –\textit{ Peter Drucker}
+        \item Bad habits such as slouching cause muscle fatigue and tension
+            that ultimately lead to poor posture.
+        \item Slouching can cause the spinal ligaments to stretch beyond their
+            healthy limit, and poor posture can strain your spinal discs.
+        \item To correct bad posture it is crucial to monitor posture.
+        \item \textit{``If you can’t measure it, you can’t improve it.''}
+            –\textit{ Peter Drucker}
     \end{itemize}
     \hfill
      \begin{figure}
         \centering
-        \includegraphics[scale=0.25]{slouching-bad-computer-posture.jpg}        
-        \caption{"Depicting Slouching Posture"}
+        \includegraphics[scale=0.25]{slouching_bad_posture.jpg}
+        \caption{Slouching posture}
         \label{fig:good}
     \end{figure}
 \end{frame}
 
 %------------------------------------------------
-
-
-
-
-%------------------------------------------------
 \section{Data Collection}
-
-
-
-%-----------------------------------------------------------
-
-% \begin{frame}{Proposed Solution}
-
-        
-%         \begin{enumerate}
-%         \item Collect Gyroscope data with Arduino or Esp8266.
-%         \item 
-%         \item The python scripts sends http requests to Google Sheets API to store the data fro further processing.
-%         \item The client sends http request to google Sheets API to read the sensor values
-%         \item Python scripts are written to detect posture and display it to the user in real time.
-%         \end{enumerate}
-% \end{frame}
-
-%_-----------------------
 
 \begin{frame}{Collection of Data}
     \begin{itemize}
-        \item Espressif's ESP8266 NodeMCU was used to interface the MPU6050 Gyro-Accelerometer by employing I2C Serial Communication Protocol.
-        \item It was programmed to generate the data representing rotational change in all the three axes. 
-        \item Trials were conducted to determine how the data changes in real-time with respect to movement of body.
+        \item Espressif's ESP8266 NodeMCU was used to interface the MPU6050
+            Gyro-Accelerometer by employing I\textsuperscript{2}C Serial Communication Protocol.
+        \item It was programmed to generate the data representing rotational
+            change in all the three axes.
+        \item Trials were conducted to determine how the data changes in
+            real-time with respect to movement of body.
     \end{itemize}
-    
+
 \end{frame}
 
-
-
-% %-----------------------------------------------------------
-% \begin{frame}{Architectures of GAN's $G$ and $D$}
-%     \vspace{0.3cm}
-%     Few Notable papers are:
-%     \begin{itemize}
-%          \item The original GAN \cite{Goodfellow2013} which used simple Multilayer perceptron (MLP)as $G$ and $D$  architecture.
-%         \item The Deep convolutional GAN \cite{DCGAN} used convolution layers with MLP to get better results.
-%         \item The wasser
-%     \end{itemize}
-%     \vspace{0.35cm}
-  
-%   \end{frame}
 %---------------------------------------------------------
 \begin{frame}{Rule Based Posture Detection}
     Analysing Data:
    \begin{figure}
        \centering
-       \includegraphics[scale=0.3]{Figure_1.png}
+       \includegraphics[scale=0.3]{gy_dist.png}
        \caption{Depicting Collected Data of Gy}
        \label{fig:piximage}
    \end{figure}
@@ -147,13 +115,16 @@
 %-----------------------------------------------------------
 \begin{frame}{Rule Based Posture Detection}
     \begin{itemize}
-        \item We are considering the $Gy$ axis as when the subject slouches there is motion only in the Y-axis.
+        \item We are considering the $Gy$ axis as when the subject slouches
+            there is motion only in the Y-axis.
         \item We observe that every time the subject
             \begin{itemize}
                 \item Slouches $-$ Negative spike in the $Gy$ value.
-                \item Comes back to a good posture $-$ Positive spike in the $Gy$ value.
+                \item Comes back to a good posture $-$ Positive spike in the
+                    $Gy$ value.
             \end{itemize}
-        \item Mapping $+15$ and $-15$ as thresholds for positive and negative spikes respectively.
+        \item Mapping \qty{\pm15}{\degree\per\second} as thresholds for positive and negative
+            spikes respectively.
         \item Then return the time spent in each posture in seconds.
     \end{itemize}
 \end{frame}
@@ -163,17 +134,19 @@
 
 
 %-----------------------------------------------------------
-\section{Proposed Method.}
+\section{Proposed Method}
 
 \begin{frame}{Proposed Method}
 
  \begin{columns}[c]
   \column{.4\textwidth}
     \begin{itemize}
-        \item Collect the axis data using MPU6050.
-        \item Process it with Microprocessor Unit and send it a host system, which sends http POST request.
-        \item To store data we are using Goggle Sheets as our Database.
-        \item Then the web application sends http GET request using Google Sheets API.
+        \item Collect the gyroscope data using MPU6050.
+        \item Process it with Microprocessor Unit and send it to a host system,
+            which sends HTTP \texttt{POST} requests to update a Google Sheet.
+        \item To store data we are using Goggle Sheets as our database.
+        \item Then the web application sends HTTP \texttt{GET} requests using
+            Google Sheets API.
         \item We display the results using a simple dashboard.
     \end{itemize}
     \column{.4\textwidth}
@@ -186,66 +159,43 @@
      \end{columns}
 \end{frame}
 
-%--------------------------------------------------------
-
-
-
-
-
 %------------------------------------------------
 
 \begin{frame}{Obtained Results}
     \begin{figure}
         \centering
-        \includegraphics[scale=0.18]{Screenshot (292).png}
-        \caption{Plotting Data and Depicting posture in Real-time.}
+        \includegraphics[scale=0.18]{webappss2.png}
+        \caption{Plotting data and showing posture changes in real-time}
         \label{fig:results}
     \end{figure}
-       
+
 \end{frame}
 %-----------------------------------------------
 
-
-
 %------------------------------------------------
-\section{Conclusions and Future Work.}
+\section{Conclusions and Future Work}
 %------------------------------------------------
 
 \begin{frame}{Limitations and Future Work}
     \begin{block}{Limitations}
         \begin{itemize}
-            \item Can be susceptible to noisy movements.
-            \item Be able to detect more range of activities.
+            \item Can be susceptible to ``noisy'' movements.
+            \item Google Sheets is not a good long-term choice
         \end{itemize}
     \end{block}
     \begin{block}{Future Work}
         \begin{itemize}
-            \item Send http requests without the intervention of host system.
-            \item Give a detailed analysis of their posture and predict it's effect on health.
+            \item Be able to detect more range of activities.
+            \item Send HTTP requests without the intervention of host system.
+            \item Give a detailed analysis of their posture and predict it's
+                effect on health.
         \end{itemize}
-           
+
     \end{block}
-    
 \end{frame}
-
-%------------------------------------------------
-
-
-
 
 %-----------------------------------------------
 \begin{frame}
-    
-         \Huge{\centerline{Thank you.}
-         \vspace{1cm}
-         \Huge{\centerline{Questions}
-         }
-         }
-    
+         \Huge{\centerline{Questions}}
 \end{frame}
-
-
-
-%----------------------------------------------------------------------------------------
-
 \end{document}
