@@ -7,6 +7,7 @@ sensors_event_t accel_event, gyro_event, temp_event;
 void setup()
 {
     Serial.begin(9600);
+    Serial.println("");
     mpu.begin();
     mpu.setAccelerometerRange(MPU6050_RANGE_16_G);
     mpu.setGyroRange(MPU6050_RANGE_2000_DEG);
