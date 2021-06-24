@@ -2,12 +2,12 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="297mm"
-   height="210mm"
-   viewBox="0 0 297 210"
+   width="259mm"
+   height="122mm"
+   viewBox="0 0 259 122"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
    sodipodi:docname="flowchart.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -26,14 +26,16 @@
      showgrid="true"
      objecttolerance="10000"
      inkscape:zoom="0.72337262"
-     inkscape:cx="597.20259"
-     inkscape:cy="340.7649"
-     inkscape:window-width="1920"
-     inkscape:window-height="1001"
-     inkscape:window-x="-9"
-     inkscape:window-y="-9"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1">
+     inkscape:cx="549.50932"
+     inkscape:cy="118.88755"
+     inkscape:window-width="1916"
+     inkscape:window-height="1048"
+     inkscape:window-x="0"
+     inkscape:window-y="28"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1"
+     height="209mm"
+     width="296mm">
     <inkscape:grid
        type="xygrid"
        id="grid27397" />
@@ -41,17 +43,17 @@
   <defs
      id="defs2">
     <marker
-       style="overflow:visible;"
+       style="overflow:visible"
        id="Arrow1Lend"
-       refX="0.0"
-       refY="0.0"
+       refX="0"
+       refY="0"
        orient="auto"
        inkscape:stockid="Arrow1Lend"
        inkscape:isstock="true">
       <path
-         transform="scale(0.8) rotate(180) translate(12.5,0)"
-         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt;"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path37218" />
     </marker>
     <rect
@@ -104,7 +106,7 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect7650);fill:#000000;fill-opacity:1;stroke:none" />
     <g
        id="g51844"
-       transform="translate(-1.194944e-7,-5.2916666)">
+       transform="translate(-15.874993,-26.458333)">
       <use
          xlink:href="#AuxillaryOp"
          style="fill:#aaccee;stroke:#000000"
@@ -128,7 +130,7 @@
     </g>
     <g
        id="g51844-3"
-       transform="translate(95.25,-5.2916666)">
+       transform="translate(79.375007,-26.458333)">
       <use
          xlink:href="#AuxillaryOp"
          style="fill:#aaccee;stroke:#000000"
@@ -158,7 +160,7 @@
     </g>
     <g
        id="g51844-31"
-       transform="translate(95.25,42.333333)">
+       transform="translate(79.375007,21.166667)">
       <use
          xlink:href="#AuxillaryOp"
          style="fill:#aaccee;stroke:#000000"
@@ -183,7 +185,7 @@
     </g>
     <g
        id="g51844-1"
-       transform="translate(95.25,89.958333)">
+       transform="translate(79.375007,68.791667)">
       <use
          xlink:href="#AuxillaryOp"
          style="fill:#aaccee;stroke:#000000"
@@ -208,7 +210,7 @@
     </g>
     <g
        id="g51844-0"
-       transform="translate(190.5,89.958333)">
+       transform="translate(174.62501,68.791667)">
       <use
          xlink:href="#AuxillaryOp"
          style="fill:#aaccee;stroke:#000000"
@@ -237,26 +239,26 @@
            id="tspan64346">Application</tspan></text>
     </g>
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458299;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-mid:url(#Arrow1Lend);marker-end:url(#Arrow1Lend)"
-       d="M 84.666666,37.041666 H 111.125"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#Arrow1Lend);marker-end:url(#Arrow1Lend)"
+       d="M 68.791673,15.875 H 95.250007"
        id="path78300"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
-       d="M 148.16666,47.624999 V 68.791666"
+       d="M 132.29167,26.458333 V 47.625"
        id="path78442"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
-       d="M 148.16666,95.249999 V 116.41667"
+       d="M 132.29167,74.083333 V 95.250004"
        id="path78494"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
-       d="M 179.91666,132.29167 H 206.375"
+       d="m 164.04167,111.125 h 26.45834"
        id="path78666"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0" />

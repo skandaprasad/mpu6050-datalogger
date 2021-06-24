@@ -1,8 +1,6 @@
 \documentclass[./main.tex]{subfiles}
 \begin{document}
-\chapter{Architecture}
-\section{Espressif's ESP8266}
-
+\chapter{Architecture}\label{chap:arch}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.4]{flowchart.pdf}
@@ -10,24 +8,7 @@
     \label{fig:architecture}
 \end{figure}
 
-
-Espressif’s ESP8266 highly integrated Wi-Fi SoC solution for efficient power
-usage, compact design and reliable performance in the Internet of Things
-industry. The integrated high-speed cache helps to increase the system
-performance and optimize the system memory. \\ Most importantly, ESP8266 also
-integrates a 32-bit processor and on-chip SRAM.  It supports UART, SDIO, SPI,
-I\textsuperscript{2}C, I\textsuperscript{2}S, IR Remote Control protocols for
-communication purposes.  Also, it has 17 GPIO pins which can be assigned to
-various functions by programming the appropriate registers \cite{espdata}.
-
-\section{Arduino UNO}
-The Arduino Uno is a microcontroller board based on the ATmega328P. It has 14
-digital input/output pins (of which 6 can be used as PWM outputs) and 6 analog
-inputs. \\ The ATmega328P has 32 KB (with 0.5 KB used for the bootloader). It
-also has 2 KB of SRAM and 1 KB of EEPROM. The ATmega328 also supports
-I\textsuperscript{2}C (TWI) and SPI communication \cite{arddata}.
-
-\section{MPU6050 Gyro-Accelerometer}
+\section{MPU6050 Gyro-Accelerometer}\label{sec:archmpu}
 The MPU6050 contains a MEMS (Micro-electromechanical System) 3-axis gyroscope
 and a 3-axis accelerometer on the same silicon die together with an on-board
 Digital Motion Processor. \\ The MPU-6050 has three 16-bit analog-to-digital
@@ -52,4 +33,30 @@ follows:
     \label{tab:pin}
 \end{table}
 
+\section{Microcontroller Unit}\label{sec:archuc}
+\subsection{Espressif's ESP8266}
+Espressif’s ESP8266 highly integrated Wi-Fi SoC solution for efficient power
+usage, compact design and reliable performance in the Internet of Things
+industry. The integrated high-speed cache helps to increase the system
+performance and optimize the system memory. \\ Most importantly, ESP8266 also
+integrates a 32-bit processor and on-chip SRAM.  It supports UART, SDIO, SPI,
+I\textsuperscript{2}C, I\textsuperscript{2}S, IR Remote Control protocols for
+communication purposes.  Also, it has 17 GPIO pins which can be assigned to
+various functions by programming the appropriate registers \cite{espdata}.
+
+\subsection{Arduino UNO}
+The Arduino Uno is a microcontroller board based on the ATmega328P. It has 14
+digital input/output pins (of which 6 can be used as PWM outputs) and 6 analog
+inputs. \\ The ATmega328P has 32 KB (with 0.5 KB used for the bootloader). It
+also has 2 KB of SRAM and 1 KB of EEPROM. The ATmega328 also supports
+I\textsuperscript{2}C (TWI) and SPI communication \cite{arddata}.
+
+\section{Host, Database and Web-app}\label{sec:archhostdb}
+The last three blocks in figure \ref{fig:architecture} represent the storage
+and processing of the collected data. Here, the host system represents any node
+that is able to connect to the internet and send HTTP requests. While testing,
+a laptop computer was used, but might as well be replaced with a Raspberry Pi
+or can be removed completely (discussed in Section \ref{sec:concllim}). Google
+Sheets acts as the database in our implementation, and the web-app is designed
+using Streamlit (see Section \ref{sec:implvis}).
 \end{document}

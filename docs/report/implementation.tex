@@ -1,8 +1,8 @@
 \documentclass[./main.tex]{subfiles}
 
 \begin{document}
-\chapter{Implementation}
-\section{Data collection}
+\chapter{Implementation}\label{chap:impl}
+\section{Data collection}\label{sec:implcollec}
 The data is collected via MPU6050 gyroscope/accelerometer modules connected to
 any microcontroller of choice (we have used both the NodeMCU and Arduino UNO
 with success). These represent the edge nodes. We use one of Adafruit's
@@ -79,10 +79,10 @@ The units of the sensor readings that are sent to the serial port are:
 \end{code}
 \vspace{0.5cm}
 
-\section{Data storage}
+\section{Data storage}\label{sec:implstr}
 Google Sheets is used as a database in this implementation. The data is read
-from the serial port, and sent to a host node (see figure x, do crossref later)
-that then updates Google Sheets via the REST API.
+from the serial port, and sent to a host node (see figure
+\ref{fig:architecture}) that then updates Google Sheets via the REST API.
 
 \subsection{Google Sheets API}
 Google provides a RESTful API for Google Sheets via its cloud platform. Out of
@@ -364,7 +364,7 @@ POST request is sent via the \mintinline{python}{request.execute()} call. The
 range is updated and this process repeats. Any exceptions are caught and
 handled as shown.
 
-\section{Data visualisation and analysis}
+\section{Data visualisation and analysis}\label{sec:implvis}
 The front-end for data visualisation is also implemented in Python. The
 libraries used are:
 \begin{itemize}
