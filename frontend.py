@@ -3,6 +3,7 @@ from google.oauth2 import service_account
 import gspread
 import time
 import os
+import sys
 import numpy as np
 import streamlit as st
 
@@ -86,7 +87,12 @@ class GetData:
 st.title("Posture Detection")
 g = GetData()
 getdata = st.checkbox("Get Data")
+if(len(sys.argv) == 2):
+    startingPoint = sys.argv[1]
+else:
+    startingPoint = 2
+print(startingPoint)
 
 if getdata:
-    g.start_read(startingPoint=2913)
+    g.start_read(startingPoint=startingPoint)
 
