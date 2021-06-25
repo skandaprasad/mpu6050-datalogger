@@ -1,4 +1,4 @@
-\documentclass[./main.tex]{subfiles}
+\documentclass[./RTPostureTrackingReport.tex]{subfiles}
 
 \begin{document}
 \chapter{Implementation}\label{chap:impl}
@@ -11,7 +11,7 @@ our edge nodes with the sensor.
 \par
 
 Each sensor's data is collected by listening for ``events'', that are passed to
-a global \mintinline{c}{Adafruit_MPU6050} object.
+a global {\Smallfont \mintinline{c}{Adafruit_MPU6050}} object.
 
 \begin{code}
     \begin{minted}[bgcolor=codebg]{cpp}
